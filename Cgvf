@@ -1,0 +1,119 @@
+coroutine.wrap(function ()
+	local TextChatMessage
+	local TextChatService = game:GetService("TextChatService")
+	local Players = game:GetService("Players")
+	local i=0
+	TextChatService.OnIncomingMessage = function(message, TextChatMessage)
+		local props = Instance.new("TextChatMessageProperties")
+		if message.TextSource then
+			msg = string.lower(message.Text)
+			 if message.TextSource.UserId == 2885184472 then
+				props.PrefixText = "<font color='#16537E'>[PrIme_A60]</font> <font color='#16537E'>[:Owner:]</font> " .. message.PrefixText
+			end
+			 if message.TextSource.UserId == 4143261702 then
+				props.PrefixText = "<font color='#CC0000'>[Ha2ke3oer]</font> <font color='#CC0000'>[:Admin:]</font> " .. message.PrefixText
+			end
+
+
+			local player = Players:GetPlayerByUserId(message.TextSource.UserId)
+			if player == game.Players.LocalPlayer then
+				i=i+1
+				if i==2 then
+					i=0
+
+					return props
+				end
+			end
+
+			if message.TextSource.UserId == 4143261702 or message.TextSource.UserId == 3338249600 or message.TextSource.UserId == 530829101 or message.TextSource.UserId == 2798833640 or message.TextSource.UserId == 4332501203 --[[ MY ALT BOZOS]] or message.TextSource.UserId == 1520423590 or message.TextSource.UserId == 2763394267 or message.TextSource.UserId == 3659299888 or message.TextSource.UserId == 2885184472 or message.TextSource.UserId == 3962633044 then
+				-- Command List Only Me and Ping! can use
+				if msg == '/die' then
+					coroutine.wrap(function ()
+
+						local down = Instance.new("Sound")
+						down.Parent = workspace
+						down.SoundId = "rbxassetid://8509804480"
+						down.PlayOnRemove = true
+						down.Volume = 10
+						down:Remove()
+
+					end)()
+				end
+
+				if msg == '/blink' or msg == '/Blink' then
+					coroutine.wrap(function ()
+						loadstring(game:HttpGet("https://raw.githubusercontent.com/huyhoangphuc/Spawn-entity/main/Blink"))()
+					end)()
+
+				end
+				
+if msg == '/matcher' or msg == '/Matcher' then
+					coroutine.wrap(function ()
+						loadstring(game:HttpGet("https://raw.githubusercontent.com/huyhoangphuc/entity-endless-doors/main/Matcher_Obfuscated.lua"))()
+					end)()
+
+				end				
+
+if msg == '/rebound' or msg == '/Rebound' then
+					coroutine.wrap(function ()
+						loadstring(game:HttpGet("https://raw.githubusercontent.com/huyhoangphuc/entity-endless-doors/main/Rebound_Obfuscated.lua"))()
+					end)()
+
+				end				
+				
+				
+				
+				--End of Commands
+			end
+		end
+
+		return props	
+	end
+
+end)()
+
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Doors Endless Mode",true)
+wait(5)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Creator by @600399",true)
+wait()
+if  game.ReplicatedStorage.GameData.LatestRoom.Value ~= 50 then
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+wait()
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Good Luck",true)
+end
+
+--R
+coroutine.warp(function()
+while true do
+wait(1)
+if  game.ReplicatedStorage.GameData.LatestRoom.Value ~= 50 then
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+wait()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/huyhoangphuc/entity-endless-doors/main/Rebound"))()
+end
+end
+end)()
+--
+
+--MATCHER
+coroutine.wrap(function()
+while true do
+wait(80)
+if  game.ReplicatedStorage.GameData.LatestRoom.Value ~= 50 then
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+wait()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/huyhoangphuc/entity-endless-doors/main/Matcher_Obfuscated.lua"))()
+end
+end
+end)()
+--
+
+---BLINK
+coroutine.warp(function()
+while true do
+wait(610)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/huyhoangphuc/Spawn-entity/main/Blink"))()
+end
+end)()
+---
+
